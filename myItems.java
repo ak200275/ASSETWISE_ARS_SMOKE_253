@@ -54,7 +54,7 @@ public void checkNewItemTabs(){
 	if(ac.displayed(driver, xpth, step)){System.out.println("Documents tab is present");}
 	else{System.out.println("ERROR : " +step+"*******************************************************Documents tab is NOT present");}
 	
-	
+/*	
 	//Check Responsibilities tab
 	step="Check Documents tab";
 	xpth=".//*[@class='k-link' and .='Responsibilities']";
@@ -66,7 +66,7 @@ public void checkNewItemTabs(){
 	xpth=".//*[@class='k-link' and .='Security']";
 	if(ac.displayed(driver, xpth, step)){System.out.println("Security tab is present");}
 	else{System.out.println("ERROR : " +step+"*******************************************************Responsibilities tab is NOT present");}
-
+*/
 }
 
 public void addContact(){ // To do........

@@ -258,13 +258,13 @@ driver.get(url);
 driver.quit();
 
 // Create New Contact Block
-testcase="test: Create Contact";
+testcase="test: Create Person";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest createContacttest;
 createContacttest=report.startTest(testcase);
 try
 {
-System.out.println("Create Contact");
+System.out.println("Create Person");
 	
 	
 	TimeNow = new Date();
@@ -321,12 +321,33 @@ report.endTest(createNewOrgtest);
 report.flush();}
 //newOrganization.checkOrganizationTabs();
 Organization.checkOrganizationTabs();
-//driver.quit();
+driver.quit();
 
-driver.get(url);
-//driver=newLogin();
+
+
+
+
+
+////////////////////////////////////////
+////////////////////////////////////////////
+///////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+//driver.get(url);
+driver=newLogin();
 waiting.pleaseWait(12);
-//myTasks Organization1 = new myTasks(driver);
+myTasks Organization1 = new myTasks(driver);
 Thread.sleep(3000);
 testcase="Create Contract from Organization and check the tabs";
 TestcaseTemplate.testCaseTemplate(testcase);
@@ -334,7 +355,7 @@ ExtentTest createFromOrgtest;
 createFromOrgtest=report.startTest(testcase);
 TimeNow = new Date();
 System.out.println(TimeNow);
-if(Organization.createFromOrg1()){createFromOrgtest.log(LogStatus.PASS, testcase);
+if(Organization1.createFromOrg1()){createFromOrgtest.log(LogStatus.PASS, testcase);
 report.endTest(createFromOrgtest);
 report.flush();}
 else{createFromOrgtest.log(LogStatus.FAIL, testcase);

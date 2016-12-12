@@ -232,28 +232,28 @@ public class home_page_links {
 		{
 			System.out.println("Testing Tasks Links");
 			try{
-				System.out.println("TestCase 9: New organization");
-		        driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='New organization']")).isDisplayed();
-		        System.out.println("Link for New organization is displayed");
+				System.out.println("TestCase 9: New task order");
+		        driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='New task order']")).isDisplayed();
+		        System.out.println("Link for New task order is displayed");
 		        
-		        driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='New organization']")).isEnabled();
-		        System.out.println("Link for New organization is enabled");
+		        driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='New task order']")).isEnabled();
+		        System.out.println("Link for New task order is enabled");
 				
-				System.out.println("TestCase 9: New organization Passed");
+				System.out.println("TestCase 9: New task order Passed");
 				System.out.println("======================================================================================");
 			}
 			catch(Exception e){ System.out.println("**********************************************************************************************TestCase 9: New organization Failed");}
 
 			
 			try{
-				System.out.println("TestCase 10: Search organizations");
-		        driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='Search organizations']")).isDisplayed();
-		        System.out.println("Link for Search organizations is displayed");
+				System.out.println("TestCase 10: Search task orders");
+		        driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='Search task orders']")).isDisplayed();
+		        System.out.println("Link for Search task orders is displayed");
 		        
-		        driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='Search organizations']")).isEnabled();
-		        System.out.println("Link for Search organizations is enabled");
+		        driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='Search task orders']")).isEnabled();
+		        System.out.println("Link for Search task orders is enabled");
 				
-				System.out.println("TestCase 10: Search organizations Passed");
+				System.out.println("TestCase 10: Search task orders Passed");
 				System.out.println("======================================================================================");
 			}
 			catch(Exception e){ System.out.println("**********************************************************************************************TestCase 10: Search organizations failed");}
@@ -516,31 +516,31 @@ public class home_page_links {
 
 		try{
 			try{
-				System.out.println("TestCase 22: New contact");
+				System.out.println("TestCase 22: New person");
 				
 				
-			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='New contact']")).isDisplayed();
-			      System.out.println("Link for New contact is displayed");
+			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='New person']")).isDisplayed();
+			      System.out.println("Link for New person is displayed");
 			      
-			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='New contact']")).isEnabled();
-			      System.out.println("Link for New contact is enabled");
+			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='New person']")).isEnabled();
+			      System.out.println("Link for New person is enabled");
 					
-					System.out.println("TestCase 22: New contact Passed");
+					System.out.println("TestCase 22: New person Passed");
 					System.out.println("======================================================================================");
 			}
 			catch(Exception e){ System.out.println("**********************************************************************************************TestCase 22: New contact Failed");}
 			
 			try{
-				System.out.println("TestCase 23: View All Contacts");
+				System.out.println("TestCase 23: Search persons");
 				
 				
-			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='View All Contacts']")).isDisplayed();
-			      System.out.println("Link for View All Contacts is displayed");
+			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='Search persons']")).isDisplayed();
+			      System.out.println("Link for Search persons is displayed");
 			      
-			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='View All Contacts']")).isEnabled();
-			      System.out.println("Link for View All Contacts is enabled");
+			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='Search persons']")).isEnabled();
+			      System.out.println("Link for Search persons is enabled");
 					
-					System.out.println("TestCase 23: View All Contacts Passed");
+					System.out.println("TestCase 23:  Search persons Passed");
 					System.out.println("======================================================================================");
 			}
 			catch(Exception e){ System.out.println("**********************************************************************************************TestCase 23: View All Contacts Failed");}
@@ -555,16 +555,16 @@ public class home_page_links {
 		try{
 			System.out.println("===================Testing Record Link Started=========================================");
 			try{
-				System.out.println("TestCase 24: View Records");
+				System.out.println("TestCase 24: View records");
 				
 				
-			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='View Records']")).isDisplayed();
-			      System.out.println("Link for View Records is displayed");
+			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='View records']")).isDisplayed();
+			      System.out.println("Link for View records is displayed");
 			      
-			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='View Records']")).isEnabled();
-			      System.out.println("Link for View Records is enabled");
+			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='View records']")).isEnabled();
+			      System.out.println("Link for View records is enabled");
 					
-					System.out.println("TestCase 24: View Records Passed");
+					System.out.println("TestCase 24: View records Passed");
 					System.out.println("======================================================================================");
 			}
 			catch(Exception e){ System.out.println("**********************************************************************************************TestCase 24: View Records Failed");}
@@ -582,16 +582,16 @@ public class home_page_links {
 			System.out.println("===================Testing Configuration Links Started==============================================");
 			try{
 				//Configure activity/asset schedules
-				System.out.println("TestCase 25: Configure activity/asset schedules");
+				System.out.println("TestCase 25: Configure activity schedules");
 				
 				
-			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='Configure activity/asset schedules']")).isDisplayed();
-			      System.out.println("Link for Configure activity/asset schedules is displayed");
+			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='Configure activity schedules']")).isDisplayed();
+			      System.out.println("Link for Configure activity schedules is displayed");
 			      
-			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='Configure activity/asset schedules']")).isEnabled();
-			      System.out.println("Link for Configure activity/asset schedules is enabled");
+			      driver.findElement(By.xpath(".//a[@class='ng-binding ng-scope' and .='Configure activity schedules']")).isEnabled();
+			      System.out.println("Link for Configure activity schedules is enabled");
 					
-					System.out.println("TestCase 25: Configure activity/asset schedules Passed");
+					System.out.println("TestCase 25: Configure activity schedules Passed");
 					System.out.println("======================================================================================");
 			}
 			catch(Exception e){ System.out.println("**********************************************************************************************TestCase 25: Configure activity/asset schedules Failed");}
@@ -891,7 +891,7 @@ public class home_page_links {
 			System.out.println("**********************************************************************************************TestCase 38: logo Link Failed");
 				}
 		
-		waiting.pleaseWait(50);
+		waiting.pleaseWait(5);
 	}
 	
 		

@@ -49,8 +49,9 @@ public class myTasks {
 
 public void checkOrganizationTabs() {
 		// TODO Auto-generated method stub
+	
+	
 		//check Attributes
-			
 			String step="check attribute";
 			xpth = ".//*[@class='k-link' and .='Attributes']";
 			Actions1 ac = new Actions1(driver);
@@ -58,10 +59,17 @@ public void checkOrganizationTabs() {
 			else{System.out.println("************************************* Error in step : "+step+": is Failed");}
 			
 
+			//Check Documents
+			step="check Documents";
+			xpth = ".//*[@class='k-link' and .='Documents']";
+			if(ac.displayed(driver, xpth, step)){System.out.println("step : "+step+": is passed");}
+			else{System.out.println("************************************* Error in step : "+step+": is Failed");}
+			
+			
 			
 		//Check Contacts
-			step="Check Contacts";
-			xpth=".//*[@class='k-link' and .='Contacts']";
+			step="Check Persons";
+			xpth=".//*[@class='k-link' and .='Persons']";
 			if(ac.displayed(driver, xpth, step)){System.out.println("step : "+step+": is passed");}
 			else{System.out.println("************************************* Error in step : "+step+": is Failed");}
 		
@@ -107,16 +115,16 @@ public void checkContractTabs(){
 	if(ac.displayed(driver, xpth, step)){System.out.println("Items tab is present");}
 	else{System.out.println("ERROR*******************************************************Items tab is NOT present");}
 		
-
+/*
 	 //check Items breakdown
 	step="check Items breakdown";
 	xpth=".//*[@class='k-link' and .='Items breakdown']";
 	if(ac.displayed(driver, xpth, step)){System.out.println("Items breakdown tab is present");}
 	else{System.out.println("ERROR*******************************************************Items breakdown tab is NOT present");}	
-	
+	*/
 
 	 //check Summary
-	step="check Summar";
+	step="check Summary";
 	xpth=".//*[@class='k-link' and .='Summary']";
 	if(ac.displayed(driver, xpth, step)){System.out.println("Summary tab is present");}
 	else{System.out.println("ERROR*******************************************************Summary tab is NOT present");}		
@@ -476,7 +484,8 @@ public boolean createFinancialYear1(){
 	//Select Create Financial Year          .//*[@class='menu-dropdown-item ng-binding' and .='Create financial year']...  now changed to 'Create'
 	step="Select Create Financial Year";
 	try{
-	xpth=".//*[@class='menu-dropdown-item ng-binding' and .='Create financial year']";
+	//xpth=".//*[@class='menu-dropdown-item ng-binding' and .='Create financial year']";
+		xpth=".//*[@class='menu-dropdown-item ng-binding' and .='Create']";
 	if(ac.displayed(driver, xpth, step)){
 		ac.click(driver, xpth, step);
 		System.out.println("Link for CreateFinancialYearLink is Clicked");}

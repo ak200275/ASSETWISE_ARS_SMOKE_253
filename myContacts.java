@@ -32,7 +32,8 @@ public String inp="";
 	
 	public void createNewConatct(){
 		
-		System.out.println("=============================Creating New Contact==============================");
+		//System.out.println("=============================Creating New Contact==============================");
+		System.out.println("=============================Creating New person==============================");
 		
 		Date date = new Date();
 		String datetime= new SimpleDateFormat("ddMMMyy_hhmm").format(date);
@@ -54,7 +55,8 @@ public String inp="";
 		
 		//Click on New Contact Link
 		step="Click on Contact link";
-		xpth=".//a[@class='ng-binding ng-scope' and .='New contact']";
+		//xpth=".//a[@class='ng-binding ng-scope' and .='New contact']";
+		xpth=".//a[@class='ng-binding ng-scope' and .='New person']";
 		Actions1 ac=new Actions1(driver);
 		if(ac.click(driver, xpth, step)){System.out.println(step+" Passed");}
 		else{System.out.println("ERROR : "+step+"****************************************************************FAILED");}
@@ -183,7 +185,8 @@ public boolean createNewConatct1(){
 		
 		//Click on New Contact Link
 		step="Click on Contact link";
-		xpth=".//a[@class='ng-binding ng-scope' and .='New contact']";
+		//xpth=".//a[@class='ng-binding ng-scope' and .='New contact']";
+		xpth=".//a[@class='ng-binding ng-scope' and .='New person']";
 		Actions1 ac=new Actions1(driver);
 		if(ac.click(driver, xpth, step)){System.out.println(step+" Passed");}
 		else{System.out.println("ERROR : "+step+"****************************************************************FAILED");

@@ -83,7 +83,7 @@ public boolean createDocument1(){
     return false;}
     waiting.pleaseWait(3);
 
-    
+/*    
     try{
     //select option Design Document
     step="select option Design Document";
@@ -101,7 +101,23 @@ public boolean createDocument1(){
     	xpth="(.//li[@data-offset-index='0'])[2]";
     	ac.click(driver, xpth, step);
     }
-
+*/
+    
+    
+    step="select option Design Document";
+    String option="Design Documents";
+    if(ac.selectItem1(driver, option)){System.out.println("document type  Design Documents was present");}
+    else{xpth="(.//li[@data-offset-index='0'])[2]";
+	ac.click(driver, xpth, step);
+	System.out.println("document type  Design Documents was not present");}
+    
+    
+    
+    
+    
+    
+    
+    
 	waiting.pleaseWait(5);
 	
 	

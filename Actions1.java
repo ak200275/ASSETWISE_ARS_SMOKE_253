@@ -717,6 +717,45 @@ public void selectItem(WebDriver driver, String option){
 	} }
 }
 
+
+public boolean selectItem1(WebDriver driver, String option){
+	this.option = option;
+	this.driver=driver;
+	System.out.println(option);
+	List<WebElement> options = driver.findElements(By.xpath(".//div[@class='k-animation-container']// ul[@class='k-list k-reset']/li"));
+	
+	for(int i=0;i<options.size();i++){
+		String s = options.get(i).getText();
+		System.out.println(s);
+	if(s.equals(option)){
+		
+		try{
+			System.out.println("Inside IF block before element definition");
+		System.out.println(s);
+		WebElement e = options.get(i);
+		System.out.println("After element definition");						
+		e.click();
+		waiting.pleaseWait(5);
+		System.out.println("After Clicking the element");
+		//waiting.pleaseWait(5);
+		return true;
+		}
+		catch(Exception e){System.out.println(e.getMessage());}
+		break;
+		
+		
+	}else{String ss = options.get(i).getText();
+	System.out.println(ss);
+	WebElement ee = options.get(i);
+	ee.sendKeys(Keys.ARROW_DOWN);
+	waiting.pleaseWait(1);
+	} }
+	return false;
+}
+
+
+
+
 	
 }
 
