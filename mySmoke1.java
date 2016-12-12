@@ -84,7 +84,7 @@ public class mySmoke1 {
    		 	//System.setProperty("webdriver.firefox.marionette", gekoLocation);     
             //WebDriver driver = new FirefoxDriver();
             
-          String chromeLocation = "G:\\SELENIUM SETUP\\Latest Selenium\\webdrivers\\chromedriver.exe";
+          String chromeLocation = "C:\\webdrivers\\Chrome\\chromedriver.exe";
    		 	System.setProperty("webdriver.chrome.driver", chromeLocation);
            WebDriver driver = new ChromeDriver();
             
