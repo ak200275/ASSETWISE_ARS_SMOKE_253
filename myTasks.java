@@ -351,10 +351,17 @@ public boolean createFromOrg1(){
 		return false;}
 		waiting.pleaseWait(5);
 	
+		
+		
+	//Add service contract select step here..
+		
+		
+		
 	
 	//Click on contractor button -- .//button[@ng-click='foreignKeyController.openGrid()']
 		step="Click on contractor button";
-		xpth=".//button[@ng-click='foreignKeyController.openGrid()']";
+		//xpth=".//button[@ng-click='foreignKeyController.openGrid()']";
+		xpth=".//button[@ng-click='foreignKeyController.openModal()']";
 		if(ac.click(driver, xpth, step)){System.out.println(step+" : Done!");}
 		else{System.out.println(step+" : Failed!");
 		return false;}

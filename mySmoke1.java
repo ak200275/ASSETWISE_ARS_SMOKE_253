@@ -18,6 +18,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -82,11 +83,18 @@ public class mySmoke1 {
 
             //String gekoLocation = "C:\\ARS_Test\\GECKODRIVER\\geckodriver0110win64\\geckodriver.exe";
    		 	//System.setProperty("webdriver.firefox.marionette", gekoLocation);     
-            //WebDriver driver = new FirefoxDriver();
+            WebDriver driver = new FirefoxDriver();
             
-          String chromeLocation = "C:\\webdrivers\\Chrome\\chromedriver.exe";
-   		 	System.setProperty("webdriver.chrome.driver", chromeLocation);
-           WebDriver driver = new ChromeDriver();
+          //String chromeLocation = "C:\\webdrivers\\Chrome\\chromedriver.exe";
+   		 	//System.setProperty("webdriver.chrome.driver", chromeLocation);
+           //WebDriver driver = new ChromeDriver();
+            
+            
+            //String IELocation = "C:\\webdrivers\\IE\\64\\IEDriverServer.exe";
+   		    //System.setProperty("webdriver.ie.driver", IELocation);
+            //WebDriver driver = new InternetExplorerDriver();
+            
+            
             
             //driver.get(url);
             driver.navigate().to(url);
@@ -188,7 +196,7 @@ try
        	waiting.pleaseWait(7);
 	System.out.println("Create Asset");
 
-	Thread.sleep(3000);
+	Thread.sleep(3);
 	//driver.get(url);
 	myAssets newasset=new myAssets(driver);
 	//newasset.createAsset();
@@ -1223,6 +1231,7 @@ public static WebDriver newLogin(){
     System.out.println(myTime);
     //String gekoLocation = "C:\\ARS_Test\\GECKODRIVER\\geckodriver0110win64\\geckodriver.exe";
 	//System.setProperty("webdriver.firefox.marionette", gekoLocation);
+
     WebDriver driver = new FirefoxDriver();
     //driver.get(url);
     driver.navigate().to(url);

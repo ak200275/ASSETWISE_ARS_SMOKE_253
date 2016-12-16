@@ -691,7 +691,8 @@ public boolean menuSearchContacts1(){
 	
 	//click on Link for menusearchviewallcontacts
 	step="click on Link for menusearchviewallcontacts";
-	xpth=".//*[@id='mainMenuContainer']//a[.='Search contacts']";
+	//xpth=".//*[@id='mainMenuContainer']//a[.='Search contacts']";
+	xpth=".//*[@id='mainMenuContainer']//a[.='Search persons']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for menusearchviewallcontacts is Clicked");
 		waiting.pleaseWait(2);

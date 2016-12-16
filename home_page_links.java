@@ -52,7 +52,7 @@ public class home_page_links {
 
 	public void checkLinks(){
 		System.out.println("===========================Testing Assets Links Started=================================");
-		waiting.pleaseWait(50);
+		waiting.pleaseWait(5);
 		try
 		
 		{
@@ -212,7 +212,7 @@ public class home_page_links {
 
 		catch (Exception e) {System.out.println("**********************************************************************************************TestCase Activities Failed");}
 
-		waiting.pleaseWait(50);
+		waiting.pleaseWait(5);
 
 
 

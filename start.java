@@ -8,6 +8,7 @@ import java.util.Date;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -70,6 +71,12 @@ public class start {
       //String chromeLocation = "C:\\webdrivers\\Chrome\\chromedriver.exe";
 		 	//System.setProperty("webdriver.chrome.driver", chromeLocation);
        //WebDriver driver = new ChromeDriver();
+        
+        
+        //String IELocation = "C:\\webdrivers\\IE\\64\\IEDriverServer.exe";
+ 		  //System.setProperty("webdriver.ie.driver", IELocation);
+        //WebDriver driver = new InternetExplorerDriver();
+        
         
         //driver.get(url);
         driver.navigate().to(url);
