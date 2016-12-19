@@ -65,7 +65,7 @@ public class mySmokeIE {
             ReadMe.readMe();
             Date date = new Date();
     		String datetime= new SimpleDateFormat("ddMMMyy_hhmm").format(date);
-            String Reportname="C:\\ARS_Test\\ARSTestReports\\ARS_SMOKETEST_REPORT_"+datetime+".html";
+            String Reportname="C:\\ARS_Test\\ARSTestReports\\ARS_SMOKETEST_REPORT_IE_"+datetime+".html";
             System.out.println(Reportname);
 
             
@@ -351,7 +351,7 @@ driver.quit();
 
 
 
-
+/*
 
 //driver.get(url);
 driver=newLogin();
@@ -375,7 +375,7 @@ Organization.checkContractTabs();
 Thread.sleep(3000);
 //driver.quit();
 driver.quit();
-
+*/
 
 }
 catch(Exception e)

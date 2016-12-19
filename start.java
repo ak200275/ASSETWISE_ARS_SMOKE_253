@@ -15,6 +15,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import ARS_Pages.home_page_links;
+import ARS_Pages.myTasks;
 
 /**
  * @author Anuj.Singh
@@ -123,11 +124,94 @@ public class start {
 //driver=newLogin();
 waiting.pleaseWait(7);
 System.out.println(url);
-	home_page_links homePage=new home_page_links(driver);
-	System.out.println("homepage object is created");
-	homePage.checkLinks();
-	homePage.checkMenulinks();
-	System.out.println("----------------------Completed Checking links on home page-------------------");
+//===============================================================================================================
+
+
+//Create Organization Block
+System.out.println("-------------------------------------------Start of Create Organization");
+testcase="Test: Create New Organization";
+TestcaseTemplate.testCaseTemplate(testcase);
+ExtentTest createNewOrgtest;
+createNewOrgtest=report.startTest(testcase);
+try
+{
+System.out.println("Create new Organization and check its tab after saving");
+TimeNow = new Date();
+System.out.println(TimeNow);
+//driver=newLogin();
+waiting.pleaseWait(12);
+myTasks Organization = new myTasks(driver);
+//newOrganization.createNewOrganization();
+if(Organization.createNewOrganization1()){createNewOrgtest.log(LogStatus.PASS, testcase);
+report.endTest(createNewOrgtest);
+report.flush();}
+else{createNewOrgtest.log(LogStatus.FAIL, testcase);
+report.endTest(createNewOrgtest);
+report.flush();}
+//newOrganization.checkOrganizationTabs();
+Organization.checkOrganizationTabs();
+//driver.quit();
+
+
+
+
+
+
+////////////////////////////////////////
+////////////////////////////////////////////
+///////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+driver.get(url);
+//driver=newLogin();
+waiting.pleaseWait(12);
+//myTasks Organization1 = new myTasks(driver);
+Thread.sleep(3000);
+testcase="Create Contract from Organization and check the tabs";
+TestcaseTemplate.testCaseTemplate(testcase);
+ExtentTest createFromOrgtest;
+createFromOrgtest=report.startTest(testcase);
+TimeNow = new Date();
+System.out.println(TimeNow);
+if(Organization.createFromOrg1()){createFromOrgtest.log(LogStatus.PASS, testcase);
+report.endTest(createFromOrgtest);
+report.flush();}
+else{createFromOrgtest.log(LogStatus.FAIL, testcase);
+report.endTest(createFromOrgtest);
+report.flush();}
+Thread.sleep(3000);
+Organization.checkContractTabs();
+Thread.sleep(3000);
+//driver.quit();
+driver.quit();
+
+
+}
+catch(Exception e)
+{
+System.out.println("*******************************************************Something went wrong in Create Organization page");
+driver.get(url);
+System.out.println(driver.getCurrentUrl());
+waiting.pleaseWait(7);
+
+}
+
+System.out.println("----------------------------End of Create Organization");
+//===============================================================================================================
+//driver.quit();
+driver.quit();
+
 		
 		
 

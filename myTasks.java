@@ -58,7 +58,7 @@ public void checkOrganizationTabs() {
 			if(ac.displayed(driver, xpth, step)){System.out.println("step : "+step+": is passed");}
 			else{System.out.println("************************************* Error in step : "+step+": is Failed");}
 			
-
+/*
 			//Check Documents
 			step="check Documents";
 			xpth = ".//*[@class='k-link' and .='Documents']";
@@ -80,7 +80,7 @@ public void checkOrganizationTabs() {
 			xpth=".//*[@class='k-link' and .='Contracts']";
 			if(ac.displayed(driver, xpth, step)){System.out.println("step : "+step+": is passed");}
 			else{System.out.println("************************************* Error in step : "+step+": is Failed");}
-		
+		*/
 	}
 	
 public void addContact(){ 
@@ -215,7 +215,7 @@ public boolean createNewOrganization1(){
 public boolean createNewContract1(){
 	
 
-    Date date = new Date();
+   // Date date;                                     // = new Date();
 	String datetime= new SimpleDateFormat("ddMMMyy_hhmm").format(date);
 	String contractname= "Contract_"+datetime;
 	System.out.println(contractname);
