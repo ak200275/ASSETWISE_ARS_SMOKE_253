@@ -90,8 +90,8 @@ public class mySmokeIE {
            //WebDriver driver = new ChromeDriver();
             
             
-          //String IELocation = "C:\\webdrivers\\IE\\64\\IEDriverServer.exe";
-            String IELocation = "C:\\webdrivers\\IE\\32\\IEDriverServer.exe";
+          String IELocation = "C:\\webdrivers\\IE\\64\\IEDriverServer.exe";
+          //String IELocation = "C:\\webdrivers\\IE\\32\\IEDriverServer.exe";
    		  System.setProperty("webdriver.ie.driver", IELocation);
           WebDriver driver = new InternetExplorerDriver();
             
@@ -1235,7 +1235,7 @@ public static WebDriver newLogin(){
 	//System.setProperty("webdriver.firefox.marionette", gekoLocation);
     //WebDriver driver = new FirefoxDriver();
     String IELocation = "C:\\webdrivers\\IE\\64\\IEDriverServer.exe";
-		  System.setProperty("webdriver.ie.driver", IELocation);
+	System.setProperty("webdriver.ie.driver", IELocation);
     WebDriver driver = new InternetExplorerDriver();
     //driver.get(url);
     driver.navigate().to(url);

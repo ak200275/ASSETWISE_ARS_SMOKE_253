@@ -1225,7 +1225,7 @@ public static WebDriver newLogin(){
 	//System.setProperty("webdriver.firefox.marionette", gekoLocation);
    // WebDriver driver = new FirefoxDriver();
     String chromeLocation = "C:\\webdrivers\\Chrome\\chromedriver.exe";
-		  System.setProperty("webdriver.chrome.driver", chromeLocation);
+	System.setProperty("webdriver.chrome.driver", chromeLocation);
     WebDriver driver = new ChromeDriver();
     //driver.get(url);
     driver.navigate().to(url);

@@ -92,7 +92,7 @@ public class mySmokeFF {
             
             //String IELocation = "C:\\webdrivers\\IE\\64\\IEDriverServer.exe";
    		    //System.setProperty("webdriver.ie.driver", IELocation);
-            //WebDriver driver = new InternetExplorerDriver();
+           // WebDriver driver = new InternetExplorerDriver();
             
             
             
