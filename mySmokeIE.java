@@ -65,7 +65,7 @@ public class mySmokeIE {
             ReadMe.readMe();
             Date date = new Date();
     		String datetime= new SimpleDateFormat("ddMMMyy_hhmm").format(date);
-            String Reportname="C:\\ARS_Test\\ARSTestReports\\ARS_SMOKETEST_REPORT_IE_"+datetime+".html";
+            String Reportname="C:\\ARS_Test\\ARSTestReports\\SMOKETEST_REPORT_IE_"+datetime+".html";
             System.out.println(Reportname);
 
             
@@ -90,7 +90,8 @@ public class mySmokeIE {
            //WebDriver driver = new ChromeDriver();
             
             
-          String IELocation = "C:\\webdrivers\\IE\\64\\IEDriverServer.exe";
+          //String IELocation = "C:\\webdrivers\\IE\\64\\IEDriverServer.exe";
+            String IELocation = "C:\\webdrivers\\IE\\32\\IEDriverServer.exe";
    		  System.setProperty("webdriver.ie.driver", IELocation);
           WebDriver driver = new InternetExplorerDriver();
             

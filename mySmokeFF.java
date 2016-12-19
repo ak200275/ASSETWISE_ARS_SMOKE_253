@@ -65,7 +65,7 @@ public class mySmokeFF {
             ReadMe.readMe();
             Date date = new Date();
     		String datetime= new SimpleDateFormat("ddMMMyy_hhmm").format(date);
-            String Reportname="C:\\ARS_Test\\ARSTestReports\\ARS_SMOKETEST_REPORT_FF_"+datetime+".html";
+            String Reportname="C:\\ARS_Test\\ARSTestReports\\SMOKETEST_REPORT_FF_"+datetime+".html";
             System.out.println(Reportname);
 
             
