@@ -20,25 +20,27 @@ import arsFramework.waiting;
 public class myTasks {
 
 	WebDriver driver;
+	public String orgname;
+	public String contractname;
+	
 	
 	public myTasks(WebDriver driver){
 		this.driver=driver;
 		Date date = new Date();
 		String datetime= new SimpleDateFormat("ddMMMyy_hhmm").format(date);
 		FinancialYear = "FY_"+datetime;
-		orgname= "org"+datetime;		
+		orgname= "org"+datetime;
+		contractname="Contract_"+datetime;
+		System.out.println("Orgname inside constructor : "+orgname);
 	}
 	
 	Date date = new Date();
 	String datetime= new SimpleDateFormat("ddMMMyy_hhmm").format(date);
-	//FinancialYear = "FY_"+datetime;
-	public String orgname= "org"+datetime;
-	//System.out.println(orgname);
+
 	public String orgname1 =orgname;
 	public String xpth="";
 	public String inp = "";
 	public String step="";
-	public String contractname="Contract_"+datetime;;
 	public String taskordername="";
 	public String BudgetCode="";
 	public String FinancialYear="";
@@ -58,7 +60,7 @@ public void checkOrganizationTabs() {
 			if(ac.displayed(driver, xpth, step)){System.out.println("step : "+step+": is passed");}
 			else{System.out.println("************************************* Error in step : "+step+": is Failed");}
 			
-/*
+
 			//Check Documents
 			step="check Documents";
 			xpth = ".//*[@class='k-link' and .='Documents']";
@@ -80,7 +82,7 @@ public void checkOrganizationTabs() {
 			xpth=".//*[@class='k-link' and .='Contracts']";
 			if(ac.displayed(driver, xpth, step)){System.out.println("step : "+step+": is passed");}
 			else{System.out.println("************************************* Error in step : "+step+": is Failed");}
-		*/
+		
 	}
 	
 public void addContact(){ 
@@ -96,7 +98,6 @@ public void addContact(){
 	//
 	
 }
-	
 
 public void checkContractTabs(){
 	
@@ -197,8 +198,6 @@ public boolean createNewOrganization1(){
 	else{System.out.println(step+" : Failed!");
 	return false;}
 	waiting.pleaseWait(5);
-	
-	
 	
 	//validate the name on another page after save
 	step="validate the name on another page after save";
@@ -332,8 +331,6 @@ public boolean createFromOrg1(){
 		Actions1 ac= new Actions1(driver);
 		String step="Click on new Contract link";
 		xpth=".//*[@class='ng-binding ng-scope' and .='New contract']";
-		//if(ac.click(xpth, step)){System.out.println("New Contract is clicked");}
-		//else{System.out.println("ERROR*********************************************************************WebElement is not present");}
 		if(ac.click(driver, xpth, step)){System.out.println(step+" : Done!");}
 		else{System.out.println(step+" : Failed!");
 		return false;}

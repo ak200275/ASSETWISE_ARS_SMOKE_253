@@ -3,6 +3,7 @@ package arsFramework;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -142,6 +143,7 @@ public void logIn(String repository, String username, String password)
 	this.PassWord= password;
 	this.Repository= repository;
 	System.out.println("login ");
+	try{
 	if(driver.findElement(By.xpath(".//*[@class='k-icon k-i-arrow-s']")).isDisplayed())
      {
      	
@@ -153,7 +155,17 @@ public void logIn(String repository, String username, String password)
              	loginWithoutRepository(username, password);
      		
      }
-	
+	}
+	catch(NoSuchElementException ne){
+		System.out.println("Repository can not be selected as there is only one repository");
+		System.out.println("***Wait for few sec please");
+		waiting.pleaseWait(1);
+		loginWithoutRepository(username, password);
+								}
+	catch(Exception e){
+		System.out.println("********General Exception");
+		System.out.println("***Wait for few sec please");
+		waiting.pleaseWait(1);}
 	
 	
 }

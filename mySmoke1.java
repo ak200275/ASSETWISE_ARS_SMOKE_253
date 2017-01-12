@@ -329,11 +329,7 @@ report.endTest(createNewOrgtest);
 report.flush();}
 //newOrganization.checkOrganizationTabs();
 Organization.checkOrganizationTabs();
-driver.quit();
-
-
-
-
+//driver.quit();
 
 
 ////////////////////////////////////////
@@ -342,21 +338,16 @@ driver.quit();
 
 
 
-
-
-
-
-
-
-
-
-
-/*
 driver.get(url);
 //driver=newLogin();
 waiting.pleaseWait(12);
 //myTasks Organization1 = new myTasks(driver);
-Thread.sleep(3000);
+if(ac.message_unsavedChanges(driver)){System.out.println("The message was found");}
+else{System.out.println("The message was not found");}
+driver.get(url);
+if(ac.message_wanttoleavethissite(driver)){System.out.println("The message was found");}
+else{System.out.println("The message was not found");}
+
 testcase="Create Contract from Organization and check the tabs";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest createFromOrgtest;
@@ -374,7 +365,7 @@ Organization.checkContractTabs();
 Thread.sleep(3000);
 //driver.quit();
 driver.quit();
-*/
+
 
 }
 catch(Exception e)

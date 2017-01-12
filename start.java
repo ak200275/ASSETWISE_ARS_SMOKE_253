@@ -6,6 +6,9 @@ package arsFramework;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -65,8 +68,8 @@ public class start {
         TimeNow = new Date();
         System.out.println(TimeNow);
 
-        //String gekoLocation = "C:\\ARS_Test\\GECKODRIVER\\geckodriver0110win64\\geckodriver.exe";
-		 	//System.setProperty("webdriver.firefox.marionette", gekoLocation);     
+        String gekoLocation = "C:\\ARS_Test\\GECKODRIVER\\geckodriver0110win64\\geckodriver.exe";
+		System.setProperty("webdriver.firefox.marionette", gekoLocation);     
         WebDriver driver = new FirefoxDriver();
         
       //String chromeLocation = "C:\\webdrivers\\Chrome\\chromedriver.exe";
@@ -84,6 +87,7 @@ public class start {
         //WebDriver driver;
         driver.manage().window().maximize();
         System.out.println("Page is Maximized");
+        url=driver.getCurrentUrl();
         	   
  	// Log - in page     	   
         	   
@@ -122,10 +126,41 @@ public class start {
 //driver.quit();
 		
 //driver=newLogin();
-waiting.pleaseWait(7);
+waiting.pleaseWait(9);
 System.out.println(url);
 //===============================================================================================================
 
+/*
+step="Click on new Contract link";
+xpth=".//*[@class='ng-binding ng-scope' and .='New contract']";
+if(ac.click(driver, xpth, step)){
+	waiting.pleaseWait(9);
+	System.out.println(step+" : Done!");}
+else{System.out.println(step+" : Failed!");}
+
+
+System.out.println("waiting started");
+waiting.pleaseWait(9);
+System.out.println("waiting over");
+//if(ac.message_wanttoleavethissite(driver)){System.out.println("The message was found");}
+//else{System.out.println("The message was not found");}
+driver.get(url);
+//waiting.pleaseWait(5);
+System.out.println("navigating now");
+
+Alert alert = driver.switchTo().alert();
+alert.accept();
+waiting.pleaseWait(5);
+//xpth= ".//*[@ng-class='customButton.btnClass' and .='No']";
+//driver.findElement(By.xpath(xpth)).click();
+System.out.println("Mission Half Reached");		
+		
+if(ac.message_unsavedChanges(driver)){System.out.println("The message was found");}
+else{System.out.println("The message was not found");}
+driver.get(url);
+if(ac.message_wanttoleavethissite(driver)){System.out.println("The message was found");}
+else{System.out.println("The message was not found");}
+*/
 
 //Create Organization Block
 System.out.println("-------------------------------------------Start of Create Organization");
@@ -153,23 +188,9 @@ Organization.checkOrganizationTabs();
 //driver.quit();
 
 
-
-
-
-
 ////////////////////////////////////////
 ////////////////////////////////////////////
 ///////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -177,7 +198,12 @@ driver.get(url);
 //driver=newLogin();
 waiting.pleaseWait(12);
 //myTasks Organization1 = new myTasks(driver);
-Thread.sleep(3000);
+if(ac.message_unsavedChanges(driver)){System.out.println("The message was found");}
+else{System.out.println("The message was not found");}
+driver.get(url);
+if(ac.message_wanttoleavethissite(driver)){System.out.println("The message was found");}
+else{System.out.println("The message was not found");}
+
 testcase="Create Contract from Organization and check the tabs";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest createFromOrgtest;
@@ -212,8 +238,11 @@ System.out.println("----------------------------End of Create Organization");
 //driver.quit();
 driver.quit();
 
-		
-		
+
+
+
+
+
 
 	}
 
