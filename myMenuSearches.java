@@ -105,8 +105,12 @@ public boolean menuSearchAssets1(){
 	
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultAsset']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultAsset']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultAsset']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultAsset']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_Tag']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_Tag']/div[2]/table/tbody/tr[1]/td[*]"));
+	
 	SearchResult.search(cellvalues, noofcol);
 	//driver.get(hm_page);
 	waiting.pleaseWait(1);
@@ -162,8 +166,12 @@ public boolean menuSearchConditions1(){
 	
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultConditionSearch']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultConditionSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultConditionSearch']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultConditionSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_ConditionSearch']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_ConditionSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	
 	SearchResult.search(cellvalues, noofcol);
 	//driver.get(hm_page);
 	waiting.pleaseWait(1);
@@ -221,8 +229,8 @@ public boolean menuSearchActivities1(){
 	
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultActivitySearch']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultActivitySearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_ActivitySearch']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_ActivitySearch']/div[2]/table/tbody/tr[1]/td[*]"));
 	SearchResult.search(cellvalues, noofcol);
 	//driver.get(hm_page);
 	waiting.pleaseWait(1);
@@ -276,8 +284,8 @@ public boolean menuSearchOrganizations1(){
 	
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultOrganizationSearch']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultOrganizationSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_OrganizationSearch']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_OrganizationSearch']/div[2]/table/tbody/tr[1]/td[*]"));
 	SearchResult.search(cellvalues, noofcol);
 	//driver.get(hm_page);
 	waiting.pleaseWait(1);
@@ -330,10 +338,14 @@ public boolean menuSearchContracts1(){
 	waiting.pleaseWait(2);
 	
 	
-	// cellvalues
+	// cellvalues   eB_CommercialContract
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultContractSearch']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultContractSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultContractSearch']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultContractSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_CommercialContract']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_CommercialContract']/div[2]/table/tbody/tr[1]/td[*]"));
+	
 	SearchResult.search(cellvalues, noofcol);
 	//driver.get(hm_page);
 	waiting.pleaseWait(1);
@@ -392,8 +404,12 @@ public boolean menuSearchBudgets1(){
 	
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultBudget']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultBudget']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultBudget']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultBudget']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_Budget']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_Budget']/div[2]/table/tbody/tr[1]/td[*]"));
+	
 	SearchResult.search(cellvalues, noofcol);
 	//driver.get(hm_page);
 	waiting.pleaseWait(1);
@@ -450,8 +466,12 @@ public boolean menuSearchTaskOrders1(){
 	
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultTaskOrderSearch']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultTaskOrderSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultTaskOrderSearch']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultTaskOrderSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_TaskOrderSearch']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_TaskOrderSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	
 	SearchResult.search(cellvalues, noofcol);
 	//driver.get(hm_page);
 	waiting.pleaseWait(1);
@@ -505,8 +525,12 @@ public boolean menuSearchItems1(){
 	
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultItemSearch']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultItemSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultItemSearch']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultItemSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_PhysicalItems']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_PhysicalItems']/div[2]/table/tbody/tr[1]/td[*]"));
+	
 	SearchResult.search(cellvalues, noofcol);
 
 	//driver.get(hm_page);
@@ -560,8 +584,12 @@ public boolean menuSearchPriceLists1(){
 	
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultPriceLists']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultPriceLists']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultPriceLists']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultPriceLists']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_Pricelist']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_Pricelist']/div[2]/table/tbody/tr[1]/td[*]"));
+	
 	SearchResult.search(cellvalues, noofcol);
 
 	//driver.get(hm_page);
@@ -615,8 +643,12 @@ public boolean menuSearchDocuments1(){
 				
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultDocumentSearch']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultDocumentSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultDocumentSearch']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultDocumentSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_DocumentSearch']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_DocumentSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	
 	SearchResult.search(cellvalues, noofcol);
 
 	//driver.get(hm_page);
@@ -659,8 +691,12 @@ public boolean menuViewAllContacts1(){
 				
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='docmgr_persons']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='docmgr_persons']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='docmgr_persons']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='docmgr_persons']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_Person']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_Person']/div[2]/table/tbody/tr[1]/td[*]"));
+	
 	SearchResult.search(cellvalues, noofcol);
 
 	//driver.get(hm_page);
@@ -705,8 +741,12 @@ public boolean menuSearchContacts1(){
 				
 	// cellvalues
 	//no of coulmns
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='docmgr_persons']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='docmgr_persons']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='docmgr_persons']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='docmgr_persons']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_Person']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_Person']/div[2]/table/tbody/tr[1]/td[*]"));
+	
 	SearchResult.search(cellvalues, noofcol);
 
 	//driver.get(hm_page);

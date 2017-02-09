@@ -137,7 +137,8 @@ public class mySmokeFF {
             	   
 //driver.quit();
 driver.quit();
-///*
+//
+
  
 //=====================================================================================================
                           
@@ -174,16 +175,14 @@ catch(Exception e)
 
 //driver.quit();
 driver.quit();
-///*
+///*/
 
-// Create Asset Block
+///*
+//---------------------------------------------- START Create Asset Block-----------------------------------------------
+ 
 ExtentTest createAssetTest;
 testcase="test: Create Asset and check the tabs of the page after saving test";
 createAssetTest=report.startTest(testcase);
-
-
-
-
 
 try
 	{
@@ -193,10 +192,10 @@ try
             System.out.println(TimeNow);
 
        	 driver=newLogin();
-       	waiting.pleaseWait(7);
+       	waiting.pleaseWait(15);
 	System.out.println("Create Asset");
 
-	Thread.sleep(3);
+	//Thread.sleep(3);
 	//driver.get(url);
 	myAssets newasset=new myAssets(driver);
 	//newasset.createAsset();
@@ -223,7 +222,12 @@ catch(Exception e)
 //driver.quit();
 driver.quit();
 
-// Document Block
+
+//-----------------------END ASSET BLOCK------------------------------------------------------------------------------------
+
+
+
+//----------------------------------------START DOCUMENT BLOCK---------------------------------------------------------------------------
 testcase="Create Document test";
 ExtentTest createDocumenttest;
 createDocumenttest=report.startTest(testcase);
@@ -265,132 +269,144 @@ driver.get(url);
 //driver.quit();
 driver.quit();
 
-// Create New Contact Block
-testcase="test: Create Person";
-TestcaseTemplate.testCaseTemplate(testcase);
-ExtentTest createContacttest;
-createContacttest=report.startTest(testcase);
-try
-{
-System.out.println("Create Person");
-	
-	
-	TimeNow = new Date();
-	System.out.println(TimeNow);
-driver=newLogin();
-waiting.pleaseWait(12);
-myContacts newcontact = new myContacts(driver);
-if(newcontact.createNewConatct1()){createContacttest.log(LogStatus.PASS, testcase);
-report.endTest(createContacttest);
-report.flush();}
-else{
-	createContacttest.log(LogStatus.FAIL, testcase);
-	report.endTest(createContacttest);
-	report.flush();
-}
-newcontact.checkContactTabs();
+//----------------------------------------END DOCUMENT BLOCK--------------------------------------------------------------------------------
 
-//driver.get(url);
+///*
+ //-------------------------------STARTCreate New Contact Block-------------------------------------------------------------
+        testcase="test: Create Person";
+        TestcaseTemplate.testCaseTemplate(testcase);
+        ExtentTest createContacttest;
+        createContacttest=report.startTest(testcase);
+        try
+        {
+        System.out.println("Create Person");
+        	
+        	
+        	TimeNow = new Date();
+        	System.out.println(TimeNow);
+        driver=newLogin();
+        waiting.pleaseWait(12);
+        myContacts newcontact = new myContacts(driver);
+        if(newcontact.createNewConatct1()){createContacttest.log(LogStatus.PASS, testcase);
+        report.endTest(createContacttest);
+        report.flush();
+        driver.quit();}
+        else{
+        	createContacttest.log(LogStatus.FAIL, testcase);
+        	report.endTest(createContacttest);
+        	report.flush();
+        	driver.quit();
+        }
+        //newcontact.checkContactTabs();
 
-Thread.sleep(3000);
-}
-catch(Exception e)
-{
-System.out.println("*******************************************************Something went wrong in Create Contact page");
-driver.get(url);
-System.out.println(driver.getCurrentUrl());
-waiting.pleaseWait(7);
-}
-//driver.quit();
-driver.quit();
+        //driver.get(url);
+
+        Thread.sleep(3000);
+        }
+        catch(Exception e)
+        {
+        System.out.println("*******************************************************Something went wrong in Create Contact page");
+        //driver.get(url);
+        //System.out.println(driver.getCurrentUrl());
+        driver.quit();
+       Actions1 ac1=new Actions1(driver);
+        if(ac1.message_wanttoleavethissite(driver)){System.out.println("Quiting the site");}
+        waiting.pleaseWait(7);
+        }
+        //driver.quit();
+        driver.quit();
+        //-------------------------------END Create New Contact Block-------------------------------------------------------------
+        
+
+
+///*
 //===============================================================================================================
-
-
-//Create Organization Block
-System.out.println("-------------------------------------------Start of Create Organization");
-testcase="Test: Create New Organization";
-TestcaseTemplate.testCaseTemplate(testcase);
-ExtentTest createNewOrgtest;
-createNewOrgtest=report.startTest(testcase);
-try
-{
-System.out.println("Create new Organization and check its tab after saving");
-TimeNow = new Date();
-System.out.println(TimeNow);
-driver=newLogin();
-waiting.pleaseWait(12);
-myTasks Organization = new myTasks(driver);
-//newOrganization.createNewOrganization();
-if(Organization.createNewOrganization1()){createNewOrgtest.log(LogStatus.PASS, testcase);
-report.endTest(createNewOrgtest);
-report.flush();}
-else{createNewOrgtest.log(LogStatus.FAIL, testcase);
-report.endTest(createNewOrgtest);
-report.flush();}
-//newOrganization.checkOrganizationTabs();
-Organization.checkOrganizationTabs();
-driver.quit();
-
-
-
-
-
-
-////////////////////////////////////////
-////////////////////////////////////////////
-///////////////////////////////////////////
+        
+        
+      //------------------------------START Create Organization Block-------------------------------------------------------------
+      System.out.println("-------------------------------------------Start of Create Organization");
+      testcase="Test: Create New Organization";
+      TestcaseTemplate.testCaseTemplate(testcase);
+      ExtentTest createNewOrgtest;
+      createNewOrgtest=report.startTest(testcase);
+      try
+      {
+      System.out.println("Create new Organization and check its tab after saving");
+      TimeNow = new Date();
+      System.out.println(TimeNow);
+      driver=newLogin();
+      waiting.pleaseWait(12);
+      myTasks Organization = new myTasks(driver);
+      //newOrganization.createNewOrganization();
+      if(Organization.createNewOrganization1()){createNewOrgtest.log(LogStatus.PASS, testcase);
+      report.endTest(createNewOrgtest);
+      report.flush();}
+      else{createNewOrgtest.log(LogStatus.FAIL, testcase);
+      report.endTest(createNewOrgtest);
+      report.flush();}
+      //newOrganization.checkOrganizationTabs();
+      Organization.checkOrganizationTabs();
+      //driver.quit();
+     
 
 
 
 
+      
+      driver.get(url);
+      Actions1 ac2=new Actions1(driver);
+      ac2.clearMessages(driver);
+      //driver=newLogin();
+      waiting.pleaseWait(12);
+      //myTasks Organization1 = new myTasks(driver);
+      Thread.sleep(3000);
+      testcase="Create Contract from Organization and check the tabs";
+      TestcaseTemplate.testCaseTemplate(testcase);
+      ExtentTest createFromOrgtest;
+      createFromOrgtest=report.startTest(testcase);
+      TimeNow = new Date();
+      System.out.println(TimeNow);
+      if(Organization.createFromOrg1()){createFromOrgtest.log(LogStatus.PASS, testcase);
+      report.endTest(createFromOrgtest);
+      report.flush();}
+      else{createFromOrgtest.log(LogStatus.FAIL, testcase);
+      report.endTest(createFromOrgtest);
+      report.flush();}
+      Thread.sleep(3000);
+      Organization.checkContractTabs();
+      Thread.sleep(3000);
+      //driver.quit();
+      //driver.quit();
 
 
+      }
+      catch(Exception e)
+      {
+      System.out.println("*******************************************************Something went wrong in Create Organization page");
+      driver.get(url);
+      Actions1 ac2=new Actions1(driver);
+      ac2.clearMessages(driver);
+      System.out.println(driver.getCurrentUrl());
+      waiting.pleaseWait(7);
 
+      }
 
+      System.out.println("----------------------------End of Create Organization");
+      //===============================================================================================================
+      //driver.quit();
+      driver.quit();
+     
+      	
+      	
+      //End of Organization Block
 
+        
 
-
-
-/*
-//driver.get(url);
-driver=newLogin();
-waiting.pleaseWait(12);
-myTasks Organization1 = new myTasks(driver);
-Thread.sleep(3000);
-testcase="Create Contract from Organization and check the tabs";
-TestcaseTemplate.testCaseTemplate(testcase);
-ExtentTest createFromOrgtest;
-createFromOrgtest=report.startTest(testcase);
-TimeNow = new Date();
-System.out.println(TimeNow);
-if(Organization1.createFromOrg1()){createFromOrgtest.log(LogStatus.PASS, testcase);
-report.endTest(createFromOrgtest);
-report.flush();}
-else{createFromOrgtest.log(LogStatus.FAIL, testcase);
-report.endTest(createFromOrgtest);
-report.flush();}
-Thread.sleep(3000);
-Organization.checkContractTabs();
-Thread.sleep(3000);
-//driver.quit();
-driver.quit();
-*/
-
-}
-catch(Exception e)
-{
-System.out.println("*******************************************************Something went wrong in Create Organization page");
-driver.get(url);
-System.out.println(driver.getCurrentUrl());
-waiting.pleaseWait(7);
-
-}
-
-System.out.println("----------------------------End of Create Organization");
+//===============================================================================================================
 //===============================================================================================================
 //driver.quit();
-driver.quit();
-	
+
+
 	
 	
 //End of Organization Block
@@ -407,54 +423,54 @@ driver.quit();
 	
 	
 	
-	
+///*	
 //==============================================================================================================	
-//Create Item block
+      //Create Item block
 
-System.out.println("================================Start of Create Item");
-testcase="Test: Create New Item and check the tabs";
-TestcaseTemplate.testCaseTemplate(testcase);
-ExtentTest createItemtest;
-createItemtest=report.startTest(testcase);
-try
-{
-System.out.println("Create new Item");
-TimeNow = new Date();
-System.out.println(TimeNow);
-driver=newLogin();
-waiting.pleaseWait(12);
-myItems newItem = new myItems(driver);
-if(newItem.createNewItem1()){createItemtest.log(LogStatus.PASS, testcase);
-report.endTest(createItemtest);
-report.flush();}
-else{createItemtest.log(LogStatus.FAIL, testcase);
-report.endTest(createItemtest);
-report.flush();}
-newItem.checkNewItemTabs();
+      System.out.println("================================Start of Create Item");
+      testcase="Test: Create New Item and check the tabs";
+      TestcaseTemplate.testCaseTemplate(testcase);
+      ExtentTest createItemtest;
+      createItemtest=report.startTest(testcase);
+      try
+      {
+      System.out.println("Create new Item");
+      TimeNow = new Date();
+      System.out.println(TimeNow);
+      driver=newLogin();
+      waiting.pleaseWait(12);
+      myItems newItem = new myItems(driver);
+      if(newItem.createNewItem1()){createItemtest.log(LogStatus.PASS, testcase);
+      report.endTest(createItemtest);
+      report.flush();}
+      else{createItemtest.log(LogStatus.FAIL, testcase);
+      report.endTest(createItemtest);
+      report.flush();}
+      newItem.checkNewItemTabs();
 
-//driver.get(url);
+      //driver.get(url);
 
-Thread.sleep(3000);
-}
-catch(Exception e)
-{
-System.out.println("*******************************************************Something went wrong in Create Item page");
-driver.get(url);
-System.out.println(driver.getCurrentUrl());
-waiting.pleaseWait(7);
+      Thread.sleep(3000);
+      }
+      catch(Exception e)
+      {
+      System.out.println("*******************************************************Something went wrong in Create Item page");
+      driver.get(url);
+      System.out.println(driver.getCurrentUrl());
+      waiting.pleaseWait(7);
 
-}
+      }
 
-System.out.println("=============================End of Create Item Block");
+      System.out.println("=============================End of Create Item Block");
 
-//driver.quit();	
-driver.quit();	
-	
-	
-	
-	
-//End of the Item Block
-//================================================================================================================	
+      //driver.quit();	
+      driver.quit();	
+      
+
+        
+        
+
+//===============================================================================================================
 	
 
 	
@@ -465,105 +481,110 @@ driver.quit();
 	
 	
 	
-	
+///*	
 
 //=================================================================================================================	
-//Create PriceList Block
-	
-System.out.println("================================Start of Create Price List");
-System.out.println("Create new Price List");
-testcase="Test: Create New Price Lists and check its tab";
-TestcaseTemplate.testCaseTemplate(testcase);
-ExtentTest createPricelisttest;
-createPricelisttest=report.startTest(testcase);
-try
-{
+      //Create PriceList Block
+      	
+      System.out.println("================================Start of Create Price List");
+      System.out.println("Create new Price List");
+      testcase="Test: Create New Price Lists and check its tab";
+      TestcaseTemplate.testCaseTemplate(testcase);
+      ExtentTest createPricelisttest;
+      createPricelisttest=report.startTest(testcase);
+      try
+      {
 
-TimeNow = new Date();
-System.out.println(TimeNow);
-driver=newLogin();
-waiting.pleaseWait(12);
-myItems newItem = new myItems(driver);
-if(newItem.createNewPriceList1()){createPricelisttest.log(LogStatus.PASS, testcase);
-report.endTest(createPricelisttest);
-report.flush();}
-else{createPricelisttest.log(LogStatus.FAIL, testcase);
-report.endTest(createDocumenttest);
-report.flush();}
-newItem.checkPriceListTabs();
+      TimeNow = new Date();
+      System.out.println(TimeNow);
+      driver=newLogin();
+      waiting.pleaseWait(12);
+      myItems newItem = new myItems(driver);
+      if(newItem.createNewPriceList1()){createPricelisttest.log(LogStatus.PASS, testcase);
+      report.endTest(createPricelisttest);
+      report.flush();}
+      else{createPricelisttest.log(LogStatus.FAIL, testcase);
+      report.endTest(createPricelisttest);
+      report.flush();}
+      newItem.checkPriceListTabs();
 
-//driver.get(url);
+      //driver.get(url);
 
-Thread.sleep(3000);
-}
-catch(Exception e)
-{
-System.out.println("*******************************************************Something went wrong in Create Pricelist page");
-driver.get(url);
-System.out.println(driver.getCurrentUrl());
-waiting.pleaseWait(7);
-}
+      Thread.sleep(3000);
+      }
+      catch(Exception e3)
+      {
+      System.out.println("*******************************************************Something went wrong in Create Pricelist page");
+      driver.get(url);
+      System.out.println(driver.getCurrentUrl());
+      waiting.pleaseWait(7);
+      }
 
-System.out.println("================================End of Create Price List Block");
+      System.out.println("================================End of Create Price List Block");
 
-//driver.quit();
-driver.quit();	
-	
-	
-	
-	
-//End of the PriceList Block
-	
-//============================================================================================================
-	
-	
-	
-	
-	
-//========================================================================================================	
-//Create a Contract block
-	
+      //driver.quit();
+      driver.quit();	
+      	
+      	
+      	
+      	
+      //End of the PriceList Block
 
-System.out.println("================================Start of Create Contract");
-System.out.println("Create new Contract");
-testcase="Test: Create New Contract and check its Tab";
-TestcaseTemplate.testCaseTemplate(testcase);
-ExtentTest createNewContracttest;
-createNewContracttest=report.startTest(testcase);
-try
-{
-TimeNow = new Date();
-System.out.println(TimeNow);
-driver=newLogin();
-waiting.pleaseWait(12);
-myTasks Contract = new myTasks(driver);
-//newContract.createNewContract();
-if(Contract.createNewContract1()){createNewContracttest.log(LogStatus.PASS, testcase);
-report.endTest(createNewContracttest);
-report.flush();}
-else{createNewContracttest.log(LogStatus.FAIL, testcase);
-report.endTest(createNewContracttest);
-report.flush();}
-//newContract.checkContractTabs();
-Contract.checkContractTabs();
+      
+  
+        
+        
 
-Thread.sleep(3000);
+//===============================================================================================================
+	
+	
+	
+	
+///*
+ //========================================================================================================	
+      //Create a Contract block
+      	
 
-}
-catch(Exception e)
-{
-System.out.println("*******************************************************Something went wrong in Create Contract page");
-driver.get(url);
-System.out.println(driver.getCurrentUrl());
-waiting.pleaseWait(7);
-}
+      System.out.println("================================Start of Create Contract");
+      System.out.println("Create new Contract");
+      testcase="Test: Create New Contract and check its Tab";
+      TestcaseTemplate.testCaseTemplate(testcase);
+      ExtentTest createNewContracttest;
+      createNewContracttest=report.startTest(testcase);
+      try
+      {
+      TimeNow = new Date();
+      System.out.println(TimeNow);
+      driver=newLogin();
+      waiting.pleaseWait(12);
+      myTasks Contract = new myTasks(driver);
+      //newContract.createNewContract();
+      if(Contract.createNewContract1()){createNewContracttest.log(LogStatus.PASS, testcase);
+      report.endTest(createNewContracttest);
+      report.flush();}
+      else{createNewContracttest.log(LogStatus.FAIL, testcase);
+      report.endTest(createNewContracttest);
+      report.flush();}
+      //newContract.checkContractTabs();
+      Contract.checkContractTabs();
 
-//driver.quit();
-driver.quit();
+      Thread.sleep(3000);
 
-System.out.println("================================End of Create Contract");
+      }
+      catch(Exception e4)
+      {
+      System.out.println("*******************************************************Something went wrong in Create Contract page");
+      driver.get(url);
+      System.out.println(driver.getCurrentUrl());
+      waiting.pleaseWait(7);
+      }
 
-//==========================================================================
+      //driver.quit();
+      driver.quit();
+
+      System.out.println("================================End of Create Contract");
+
+      //==========================================================================
 
 	
 	
@@ -571,101 +592,105 @@ System.out.println("================================End of Create Contract");
 	
 //End of the Contract Block
 //============================================================================================================
-
+///*
 //===============================================================================================================	
-//Create Financial Year Block
-System.out.println("================================Start of Financial Year Block");
-testcase="Test:Create Financial Year";
-TestcaseTemplate.testCaseTemplate(testcase);
-ExtentTest createFinancialYearTest;
-createFinancialYearTest=report.startTest(testcase);
-TimeNow = new Date();
-System.out.println(TimeNow);
-driver=newLogin();
-waiting.pleaseWait(17);
-//Tasks FIBUTA = new Tasks(driver);
-myTasks FIBUTA = new myTasks(driver);
-try
-{
+      //Create Financial Year Block
+      System.out.println("================================Start of Financial Year Block");
+      testcase="Test:Create Financial Year";
+      TestcaseTemplate.testCaseTemplate(testcase);
+      ExtentTest createFinancialYearTest;
+      createFinancialYearTest=report.startTest(testcase);
+      TimeNow = new Date();
+      System.out.println(TimeNow);
+      driver=newLogin();
+      waiting.pleaseWait(17);
+      //Tasks FIBUTA = new Tasks(driver);
+      myTasks FIBUTA = new myTasks(driver);
+      try
+      {
 
 
-//newContract.createNewContract();
-System.out.println("Configure Activity Schedule");
-//FIBUTA.configureActivitySchedule();
-
-
-
-//waiting.pleaseWait(12);
-//driver.get(url);
-waiting.pleaseWait(12);
-System.out.println("Create Financial Year");
-if(FIBUTA.createFinancialYear1()){createFinancialYearTest.log(LogStatus.PASS, testcase);
-report.endTest(createFinancialYearTest);
-report.flush();}
-else{createFinancialYearTest.log(LogStatus.FAIL, testcase);
-report.endTest(createFinancialYearTest);
-report.flush();}
-driver.get(url);
-waiting.pleaseWait(12);
-//extst.log(LogStatus.FAIL, testcase);
-//report.endTest(extst);
-//FIBUTA.createNewContract();
-//waiting.pleaseWait(12);
-}	
-
-catch(Exception e)
-{
-	createFinancialYearTest.log(LogStatus.FAIL, testcase);
-	report.endTest(createFinancialYearTest);
-	report.flush();
-System.out.println("*******************************************************Something went wrong in Create Contract page");
-//driver.get(url);
-System.out.println(driver.getCurrentUrl());
-waiting.pleaseWait(7);
-}
+      //newContract.createNewContract();
+      System.out.println("Configure Activity Schedule");
+      //FIBUTA.configureActivitySchedule();
 
 
 
+      //waiting.pleaseWait(12);
+      //driver.get(url);
+      waiting.pleaseWait(12);
+      System.out.println("Create Financial Year");
+      if(FIBUTA.createFinancialYear1()){createFinancialYearTest.log(LogStatus.PASS, testcase);
+      report.endTest(createFinancialYearTest);
+      report.flush();}
+      else{createFinancialYearTest.log(LogStatus.FAIL, testcase);
+      report.endTest(createFinancialYearTest);
+      report.flush();}
+      driver.get(url);
+      waiting.pleaseWait(12);
+      //extst.log(LogStatus.FAIL, testcase);
+      //report.endTest(extst);
+      //FIBUTA.createNewContract();
+      //waiting.pleaseWait(12);
+      }	
+
+      catch(Exception e5)
+      {
+      	createFinancialYearTest.log(LogStatus.FAIL, testcase);
+      	report.endTest(createFinancialYearTest);
+      	report.flush();
+      System.out.println("*******************************************************Something went wrong in Create Contract page");
+      //driver.get(url);
+      System.out.println(driver.getCurrentUrl());
+      waiting.pleaseWait(7);
+      }
 
 
 
-System.out.println("Create Budget");
-testcase="Test:Create Budget";
-TestcaseTemplate.testCaseTemplate(testcase);
-ExtentTest createBudgettest;
-createBudgettest=report.startTest(testcase);
-try{
-if(FIBUTA.createBudget1()){createBudgettest.log(LogStatus.PASS, testcase);
-report.endTest(createBudgettest);
-report.flush();}
-else{createBudgettest.log(LogStatus.FAIL, testcase);
-report.endTest(createBudgettest);
-report.flush();}
-//waiting.pleaseWait(12);
-//FIBUTA.createTaskOrder();
-//waiting.pleaseWait(12);
 
 
-}	
 
-catch(Exception e)
-{
-	createBudgettest.log(LogStatus.FAIL, testcase);
-	report.endTest(createBudgettest);
-	report.flush();
-System.out.println("*******************************************************Something went wrong in Create Contract page");
-//driver.get(url);
-System.out.println(driver.getCurrentUrl());
-waiting.pleaseWait(7);
-}
-//report.endTest(extst2);
-//report.flush();
-//driver.quit();
-driver.quit();
+      System.out.println("Create Budget");
+      testcase="Test:Create Budget";
+      TestcaseTemplate.testCaseTemplate(testcase);
+      ExtentTest createBudgettest;
+      createBudgettest=report.startTest(testcase);
+      try{
+      if(FIBUTA.createBudget1()){createBudgettest.log(LogStatus.PASS, testcase);
+      report.endTest(createBudgettest);
+      report.flush();}
+      else{createBudgettest.log(LogStatus.FAIL, testcase);
+      report.endTest(createBudgettest);
+      report.flush();}
+      //waiting.pleaseWait(12);
+      //FIBUTA.createTaskOrder();
+      //waiting.pleaseWait(12);
 
-System.out.println("================================End of FIBUTA");
 
-//End of the Financial Year Block
+      }	
+
+      catch(Exception e6)
+      {
+      	createBudgettest.log(LogStatus.FAIL, testcase);
+      	report.endTest(createBudgettest);
+      	report.flush();
+      System.out.println("*******************************************************Something went wrong in Create Contract page");
+      //driver.get(url);
+      System.out.println(driver.getCurrentUrl());
+      waiting.pleaseWait(7);
+      }
+      //report.endTest(extst2);
+      //report.flush();
+      //driver.quit();
+      driver.quit();
+
+      System.out.println("================================End of FIBUTA");
+
+      //End of the Financial Year Block
+      
+        
+
+//===============================================================================================================
 
 //============================================================================================================
 
@@ -709,15 +734,14 @@ System.out.println("================================End of FIBUTA");
 	
 //End of the Configure Activity Schedule Block
 
-//============================================================================================================
-
+//===============================================================================================================
 
 //------------------------------------------QuickSearch--------------------------------------
 //------------------------------------------QuickSearch  Activity--------------------------------------
 
 
 
-// /*
+///*
 testcase="Test: Quick Search Activities";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest quickSearchActivitiestest;
@@ -738,11 +762,17 @@ waiting.pleaseWait(5);
 System.out.println(driver.getCurrentUrl());
 //driver.quit();
 driver.quit();
+
+
+
+
+
 //------------------------------------------QuickSearch  Activities END--------------------------------------
+///*
 //------------------------------------------QuickSearch  Assets START--------------------------------------
 driver=newLogin();
 waiting.pleaseWait(12);
-System.out.println(driver.getCurrentUrl());
+//System.out.println(driver.getCurrentUrl());
 myQuickSearch  qsearch1= new myQuickSearch(driver);
 testcase="Test: Quick Search Assets";
 TestcaseTemplate.testCaseTemplate(testcase);
@@ -760,12 +790,19 @@ report.endTest(quickSearchAssetstest);
 report.flush();}
 //driver.quit();
 driver.quit();
+
+
+
+
 //waiting.pleaseWait(10);
 //------------------------------------------QuickSearch  Assets END--------------------------------------
 
 
 //QuickSearch  qserch= new QuickSearch(driver);
 
+
+
+///*
 testcase="Test: Quick Search Organizations";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest quickSearchOrgTest;
@@ -787,6 +824,10 @@ report.flush();}
 //driver.quit();
 driver.quit();
 
+
+
+
+///*
 testcase="Test: Quick Search Budgets";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest quickSearchBudgettest;
@@ -808,6 +849,11 @@ report.flush();}
 //driver.quit();
 driver.quit();
 
+
+
+
+
+///*
 testcase="Test: Quick Search Conditions";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest quickSearchConditionstest;
@@ -829,6 +875,10 @@ report.flush();}
 //driver.quit();
 driver.quit();
 
+
+
+
+// /*
 testcase="Test: Quick Search Contracts";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest quickSearchContractstest;
@@ -849,6 +899,10 @@ report.endTest(quickSearchContractstest);
 report.flush();}
 driver.quit();
 
+
+
+
+///*
 testcase="Test: Quick Search Documents";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest quickSearchDocumentstest;
@@ -869,6 +923,10 @@ report.endTest(quickSearchDocumentstest);
 report.flush();}
 driver.quit();
 
+
+
+
+// /*
 testcase="Test: Quick Search People";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest quickSearchPeopletest;
@@ -889,6 +947,9 @@ report.endTest(quickSearchPeopletest);
 report.flush();}
 driver.quit();
 
+
+
+///*
 testcase="Test: Quick Search PriceLists";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest quickSearchPriceListtest;
@@ -909,6 +970,9 @@ report.endTest(quickSearchPriceListtest);
 report.flush();}
 driver.quit();
 
+
+
+///*
 testcase="Test: Quick Search Items";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest quickSearchItemstest;
@@ -929,6 +993,10 @@ report.endTest(quickSearchItemstest);
 report.flush();}
 driver.quit();
 
+
+
+
+///*
 testcase="Test: Quick Search Tasks Orders";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest quickSearchTasksOrdertest;
@@ -960,11 +1028,17 @@ driver.quit();
 //*/
 
 
+
+
+//===============================================================================================================
+
 //------------------------------------------MenuSearch--------------------------------------
 //newLogin();
 //driver.get(url);
 //WebDriver driver=newLogin();
 //driver = driver2;
+
+///*
 testcase="Test: Menu Search Assets";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchAssetstest;
@@ -985,6 +1059,10 @@ if(msearch.menuSearchAssets1()){
 }
 driver.quit();
 
+
+
+
+// /*
 testcase="Test: Menu Search Activities";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchActivitiestest;
@@ -1005,6 +1083,10 @@ if(msearch1.menuSearchActivities1()){
 }
 driver.quit();
 
+
+
+
+// /*
 testcase="Test: Menu Search Budget";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchBudgettest;
@@ -1025,6 +1107,9 @@ if(msearch2.menuSearchBudgets1()){
 }
 driver.quit();
 
+
+
+///*
 testcase="Test: Menu Search Conditions";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchConditionstest;
@@ -1045,6 +1130,8 @@ if(msearch3.menuSearchConditions1()){
 }
 driver.quit();
 
+
+// /*
 testcase="Test: Menu Search Contracts";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchContractstest;
@@ -1065,6 +1152,10 @@ if(msearch4.menuSearchContracts1()){
 }
 driver.quit();
 
+
+
+
+// /*
 testcase="Test: Menu Search Documents";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchDocumentstest;
@@ -1085,6 +1176,10 @@ if(msearch5.menuSearchDocuments1()){
 }
 driver.quit();
 
+
+
+
+///*
 testcase="Test: Menu Search Items";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchItemstest;
@@ -1105,6 +1200,9 @@ if(msearch6.menuSearchItems1()){
 }
 driver.quit();
 
+
+
+// /*
 testcase="Test: Menu Search Organizations";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchOrgtest;
@@ -1125,6 +1223,12 @@ if(msearch7.menuSearchOrganizations1()){
 }
 driver.quit();
 
+
+
+
+
+
+///*
 testcase="Test: Menu Search PriceLists";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchPriceListstest;
@@ -1145,6 +1249,10 @@ if(msearch8.menuSearchPriceLists1()){
 }
 driver.quit();
 
+
+
+
+// /*
 testcase="Test: Menu Search Tasks Orders";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchTaskOrderstest;
@@ -1166,6 +1274,10 @@ if(msearch9.menuSearchTaskOrders1()){
 }
 driver.quit();
 
+
+
+///*
+
 testcase="Test: Menu Search Contacts";
 TestcaseTemplate.testCaseTemplate(testcase);
 ExtentTest menuSearchContactstest;
@@ -1185,6 +1297,12 @@ if(msearch10.menuSearchContacts1()){
 	report.flush();
 }
 driver.quit();
+
+       // }
+  
+  
+
+//===============================================================================================================
 
 
 
@@ -1236,9 +1354,7 @@ public static WebDriver newLogin(){
     //driver.get(url);
     driver.navigate().to(url);
     driver.manage().window().maximize();
-/*
- 
-*/	
+	
 	Actions1 ac=new Actions1(driver);
 	String step="Check if the text box for password is displayed";
 	String xpth = ".//*[@id='txtPassword']";
@@ -1247,8 +1363,7 @@ public static WebDriver newLogin(){
 		ars_logIn2 loginPage = new ars_logIn2(driver);
 	  loginPage.logIn(repository, username, password);
 	  	 }
-	else{System.out.println("The page could not be displayed properly");
-	}
+	else{System.out.println("The page could not be displayed properly");}
 
 	step="Check if the page loaded completely";
 	xpth = ".//*[.='Legal Notices']";
@@ -1257,16 +1372,11 @@ public static WebDriver newLogin(){
 	  	 }
 	else{System.out.println("The page could not be loaded properly");
 	}
-    
-    
-    
+   
 	return driver;
 	
-	
-	
 }
-              
-             
+            
 
 }
 //End of the class

@@ -74,7 +74,7 @@ testcase = "Quick Search Test for Activities";
 	xpth=".//div[@id='vm.poQuickSearch']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for hp_QuickSearchLink is Clicked");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(3);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 	//extst1.log(LogStatus.FAIL, testcase);
@@ -84,7 +84,8 @@ testcase = "Quick Search Test for Activities";
 	
     //click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -130,10 +131,11 @@ testcase = "Quick Search Test for Activities";
 	
 	//click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 	//extst1.log(LogStatus.FAIL, testcase);
@@ -146,8 +148,10 @@ testcase = "Quick Search Test for Activities";
 	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultTaskInspectionSearch']/div[2]/table/tbody//td"));		
 	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultTaskInspectionSearch']/div[2]/table/tbody/tr[1]/td[*]"));
 	//ars_DefaultActivitySearch
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='ars_DefaultActivitySearch']/div[2]/table/tbody//td"));		
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='ars_DefaultActivitySearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='ars_DefaultActivitySearch']/div[2]/table/tbody//td"));		
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='ars_DefaultActivitySearch']/div[2]/table/tbody/tr[1]/td[*]"));
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_ActivitySearch']/div[2]/table/tbody//td"));		
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_ActivitySearch']/div[2]/table/tbody/tr[1]/td[*]"));
 	
 	
 SearchResult.search(cellvalues, noofcol);
@@ -183,7 +187,8 @@ testcase = "Quick Search Test for Activities";
 	
    //click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -210,6 +215,7 @@ testcase = "Quick Search Test for Activities";
 	step="Select Item Assets";
 	String option="Assets";
 	ac.selectItem(driver, option);
+	//if(ac.selectItem1(driver, option)){System.out.println("Asset is selected");}
 	waiting.pleaseWait(2);
 	
 	//Link for keyintext is provided
@@ -228,10 +234,11 @@ testcase = "Quick Search Test for Activities";
 
 //
 	step="click on Link for SearchButton is provided";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 	//extst2.log(LogStatus.FAIL, testcase);
@@ -245,8 +252,13 @@ testcase = "Quick Search Test for Activities";
 //List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultAsset']/div[2]/table/tbody//td"));
 //List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultAsset']/div[2]/table/tbody/tr[1]/td[*]"));
 	
-	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultAsset']/div[2]/table/tbody//td"));
-	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultAsset']/div[2]/table/tbody/tr[1]/td[*]"));
+	//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultAsset']/div[2]/table/tbody//td"));
+	//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultAsset']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_Tag']/div[2]/table/tbody//td"));
+	List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_Tag']/div[2]/table/tbody/tr[1]/td[*]"));
+	
+	
 SearchResult.search(cellvalues, noofcol);
 System.out.print("--------------FINISH--------------ASSETS SEARCH--------------");
 //extst2.log(LogStatus.PASS, testcase);
@@ -273,7 +285,8 @@ public boolean financialYear1(){
 //click on Link for dropdownbox
 	
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -316,10 +329,11 @@ public boolean financialYear1(){
 	
 	//click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 		return false;
@@ -332,6 +346,7 @@ List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultFina
 SearchResult.search(cellvalues, noofcol);
 	
 System.out.println("--------------FINISH--------------Financial Year SEARCH--------------");
+waiting.pleaseWait(2);
 return true;
 	
 	
@@ -356,7 +371,8 @@ public boolean budgets1(){
 	
 	//click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -401,10 +417,11 @@ public boolean budgets1(){
 	
 	//click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 		return false;
@@ -412,12 +429,16 @@ public boolean budgets1(){
 	waiting.pleaseWait(2);
 	
 //financial year search not working?
-List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultBudget']/div[2]/table/tbody//td"));
-List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultBudget']/div[2]/table/tbody/tr[1]/td[*]"));
+//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultBudget']/div[2]/table/tbody//td"));
+//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultBudget']/div[2]/table/tbody/tr[1]/td[*]"));
+
+List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_Budget']/div[2]/table/tbody//td"));
+List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_Budget']/div[2]/table/tbody/tr[1]/td[*]"));
+
 SearchResult.search(cellvalues, noofcol);
 	
 System.out.println("--------------FINISH--------------DefaultBudget SEARCH--------------");
-	
+waiting.pleaseWait(2);
 	return true;
 	
 }
@@ -440,7 +461,8 @@ public boolean conditions1(){
 	
 	//click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -483,10 +505,11 @@ public boolean conditions1(){
 	
 	//click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 		return false;
@@ -495,11 +518,17 @@ public boolean conditions1(){
 	
 	
 //financial year search not working?
-List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultConditionSearch']/div[2]/table/tbody//td"));
-List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultConditionSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultConditionSearch']/div[2]/table/tbody//td"));
+//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultConditionSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
+List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_ConditionSearch']/div[2]/table/tbody//td"));
+List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_ConditionSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
+
 SearchResult.search(cellvalues, noofcol);
 	
 System.out.println("--------------FINISH--------------DefaultConditionSearch SEARCH--------------");
+waiting.pleaseWait(2);
 	return true;
 		
 }
@@ -520,7 +549,8 @@ public boolean contracts1(){
 	
 //click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -565,10 +595,11 @@ public boolean contracts1(){
 	
 	//click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 		return false;
@@ -577,11 +608,17 @@ public boolean contracts1(){
 	
 			
 //financial year search not working?
-List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultContractSearch']/div[2]/table/tbody//td"));
-List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultContractSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultContractSearch']/div[2]/table/tbody//td"));
+//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultContractSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
+List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_CommercialContract']/div[2]/table/tbody//td"));
+List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_CommercialContract']/div[2]/table/tbody/tr[1]/td[*]"));
+
+
 SearchResult.search(cellvalues, noofcol);
 	
 System.out.println("--------------FINISH--------------Financial Year SEARCH--------------");
+waiting.pleaseWait(2);
 	return true;
 }
 
@@ -602,7 +639,8 @@ public boolean documents1(){
 	
 	//click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -647,10 +685,11 @@ public boolean documents1(){
 	
 	//click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 		return false;
@@ -659,11 +698,16 @@ public boolean documents1(){
 	
 	
 
-List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultDocumentSearch']/div[2]/table/tbody//td"));
-List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultDocumentSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultDocumentSearch']/div[2]/table/tbody//td"));
+//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultDocumentSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
+List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_DocumentSearch']/div[2]/table/tbody//td"));
+List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_DocumentSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
 SearchResult.search(cellvalues, noofcol);
 	
 System.out.println("--------------FINISH--------------DefaultDocumentSearch SEARCH--------------");
+waiting.pleaseWait(2);
 	return true;
 }
 
@@ -686,7 +730,8 @@ public boolean items1(){
 	
     //click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -731,10 +776,11 @@ public boolean items1(){
 	
 	//click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 		return false;
@@ -743,11 +789,17 @@ public boolean items1(){
 	
 	
 //financial year search not working?
-List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultItemSearch']/div[2]/table/tbody//td"));
-List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultItemSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultItemSearch']/div[2]/table/tbody//td"));
+//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultItemSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
+List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_PhysicalItemSearch']/div[2]/table/tbody//td"));
+List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_PhysicalItemSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
+
 SearchResult.search(cellvalues, noofcol);
 	
 System.out.println("--------------FINISH--------------DefaultItemSearch SEARCH--------------");
+waiting.pleaseWait(2);
 	
 	return true;
 	
@@ -770,7 +822,8 @@ public boolean organizations1(){
 	
 	//click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -859,10 +912,11 @@ public boolean organizations1(){
 	
 	//click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 		return false;
@@ -870,12 +924,16 @@ public boolean organizations1(){
 	waiting.pleaseWait(2);
 	
 //financial year search not working?
-List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultOrganizationSearch']/div[2]/table/tbody//td"));
-List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultOrganizationSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultOrganizationSearch']/div[2]/table/tbody//td"));
+//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultOrganizationSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_OrganizationSearch']/div[2]/table/tbody//td"));
+List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_OrganizationSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
+
 SearchResult.search(cellvalues, noofcol);
 	
 System.out.println("--------------FINISH--------------DefaultOrganizationSearch SEARCH--------------");
-	
+waiting.pleaseWait(2);
 	return true;
 	
 	
@@ -899,7 +957,8 @@ public boolean people1(){
 	
 	//click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -943,10 +1002,11 @@ public boolean people1(){
 	
 	//		click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(3);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 		return false;
@@ -956,12 +1016,16 @@ public boolean people1(){
 	//
 	
 //financial year search not working?
-List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultPerson']/div[2]/table/tbody//td"));
-List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultPerson']/div[2]/table/tbody/tr[1]/td[*]"));
+//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultPerson']/div[2]/table/tbody//td"));
+//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultPerson']/div[2]/table/tbody/tr[1]/td[*]"));
+
+List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_Person']/div[2]/table/tbody//td"));
+List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_Person']/div[2]/table/tbody/tr[1]/td[*]"));
+
 SearchResult.search(cellvalues, noofcol);
 	
 System.out.println("--------------FINISH--------------DefaultPerson SEARCH--------------");
-	
+waiting.pleaseWait(2);
 	return true;
 	
 	
@@ -985,7 +1049,8 @@ public boolean priceLists1(){
 	
 	//click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -1030,10 +1095,11 @@ public boolean priceLists1(){
 	
 	//click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 		return false;
@@ -1041,12 +1107,16 @@ public boolean priceLists1(){
 	waiting.pleaseWait(2);
 	
 //financial year search not working?
-List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultPriceListSearch']/div[2]/table/tbody//td"));
-List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultPriceListSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultPriceListSearch']/div[2]/table/tbody//td"));
+//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultPriceListSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
+List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_PriceListSearch']/div[2]/table/tbody//td"));
+List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_PriceListSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
 SearchResult.search(cellvalues, noofcol);
 	
 System.out.println("--------------FINISH--------------DefaultPriceListSearch SEARCH--------------");
-	
+waiting.pleaseWait(2);
 	return true;
 	
 	
@@ -1071,7 +1141,8 @@ public boolean taskOrders1(){
 	
 	//click on Link for dropdownbox
 	step="click on Link for dropdownbox";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth=".//span[@class='k-icon k-i-arrow-s']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for dropdownbox is Clicked");
 		waiting.pleaseWait(2);
@@ -1114,10 +1185,11 @@ public boolean taskOrders1(){
 	
 	//click on Link for SearchButton
 	step="click on Link for SearchButton";
-	xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	//xpth=".//div[@class='navbarright']//div[@class='popoverQuickSearch ng-scope']//button[@ng-click='arsQuickSearch.openSearch()']";
+	xpth=".//*[@ng-click='eBQuickSearch.openSearch()']";
 	if(ac.click(driver, xpth, step)){
 		System.out.println("Link for SearchButton is provided");
-		waiting.pleaseWait(2);
+		waiting.pleaseWait(7);
 		}
 	else{System.out.println("ERROR: Could Not perform "+step);
 		return false;
@@ -1125,12 +1197,16 @@ public boolean taskOrders1(){
 	waiting.pleaseWait(2);
 	
 //financial year search not working?
-List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultTaskOrderSearch']/div[2]/table/tbody//td"));
-List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultTaskOrderSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+//List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='DefaultTaskOrderSearch']/div[2]/table/tbody//td"));
+//List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='DefaultTaskOrderSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
+List<WebElement> cellvalues = driver.findElements(By.xpath(".//*[@name='eB_TaskOrderSearch']/div[2]/table/tbody//td"));
+List<WebElement> noofcol = driver.findElements(By.xpath(".//*[@name='eB_TaskOrderSearch']/div[2]/table/tbody/tr[1]/td[*]"));
+
 SearchResult.search(cellvalues, noofcol);
 	
 System.out.println("--------------FINISH--------------DefaultTaskOrderSearch SEARCH--------------");
-	
+waiting.pleaseWait(2);
 	return true;
 	
 	

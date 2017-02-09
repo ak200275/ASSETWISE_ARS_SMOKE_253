@@ -69,7 +69,7 @@ public class SeeElement {
 		
 		
 		FluentWait<WebDriver> fWait = new FluentWait<WebDriver>(driver);
-        fWait.withTimeout(20, TimeUnit.SECONDS);
+        fWait.withTimeout(40, TimeUnit.SECONDS);
         fWait.pollingEvery(1, TimeUnit.SECONDS);
         fWait.ignoring(NoSuchElementException.class);
          return fWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpth)));

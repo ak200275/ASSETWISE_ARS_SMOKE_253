@@ -121,7 +121,8 @@ public boolean createNewItem1(){
 		
 	//Click on type drop down arrow
 	step="Click on type drop down arrow";
-	xpth=".//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth= "(.//*[@class='k-icon k-i-arrow-s'])[1]";
 	if(ac.click(driver, xpth, step)){System.out.println("Clicked on type drop down arrow");}
 	else{System.out.println("ERROR:"+step+"*********************************************************************WebElement is not present");
 	return false;}
@@ -136,6 +137,15 @@ public boolean createNewItem1(){
 	return false;}
 	waiting.pleaseWait(9);
 
+	//provide code
+	step="provide name";
+	xpth=".//input[@name='Code']";
+	inp=itemname;
+	if(ac.input(driver, xpth, inp, step)){System.out.println("code provided");}
+	else{System.out.println("ERROR:"+step+"*********************************************************************WebElement is not present");
+	return false;}
+	waiting.pleaseWait(2);
+	
 	//provide name
 	step="provide name";
 	xpth=".//input[@name='Name']";
@@ -143,7 +153,7 @@ public boolean createNewItem1(){
 	if(ac.input(driver, xpth, inp, step)){System.out.println("name provided");}
 	else{System.out.println("ERROR:"+step+"*********************************************************************WebElement is not present");
 	return false;}
-	waiting.pleaseWait(9);
+	waiting.pleaseWait(2);
 
 	
 	//Click to save
@@ -188,9 +198,10 @@ public boolean createNewPriceList1(){
 			Actions1 ac = new Actions1(driver);
 			
 			//Click on link of new organization on home page
-			step="Click on link of new organization on home page";
-			xpth=".//*[@class='ng-binding ng-scope' and .='New price list']";
-			if(ac.click(driver, xpth, step)){System.out.println("Clicked on link of new organization on home page");}
+			step="Click on link of new pricelist on home page";
+			//xpth=".//*[@class='ng-binding ng-scope' and .='New price list']";
+			xpth=".//*[@class='ng-binding ng-scope' and .='New pricelist']";
+			if(ac.click(driver, xpth, step)){System.out.println("Clicked on link of new pricelist on home page");}
 			else{System.out.println("ERROR: "+ step+"*********************************************************************WebElement is not present");
 			return false;}
 			waiting.pleaseWait(9);
@@ -198,11 +209,11 @@ public boolean createNewPriceList1(){
 			
 			//Click on type drop down arrow
 			step="Click on type drop down arrow";
-			xpth=".//span[@class='k-icon k-i-arrow-s' and .='select']";
+			xpth="(.//*[@class='k-icon k-i-arrow-s'])[1]";
 			if(ac.click(driver, xpth, step)){System.out.println("Clicked on type drop down arrow");}
 			else{System.out.println("ERROR: "+ step+"*********************************************************************WebElement is not present");
 			return false;}
-			waiting.pleaseWait(9);
+			waiting.pleaseWait(5);
 			
 			//select list of standard items
 			step="select list of standard items";
@@ -210,7 +221,7 @@ public boolean createNewPriceList1(){
 			if(ac.click(driver, xpth, step)){System.out.println("select list of standard items");}
 			else{System.out.println("ERROR: "+ step+"*********************************************************************WebElement is not present");
 			return false;}
-			waiting.pleaseWait(9);
+			waiting.pleaseWait(3);
 			
 			//provide pricelist name
 			step="provide pricelist name";
@@ -219,7 +230,7 @@ public boolean createNewPriceList1(){
 			if(ac.input(driver, xpth, inp, step)){System.out.println("provided pricelist name");}
 			else{System.out.println("ERROR: "+ step+"*********************************************************************WebElement is not present");
 			return false;}
-			waiting.pleaseWait(9);
+			waiting.pleaseWait(3);
 
 			//Save changes
 			step="Save Changes";

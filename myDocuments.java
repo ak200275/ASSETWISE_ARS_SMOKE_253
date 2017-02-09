@@ -81,7 +81,7 @@ public boolean createDocument1(){
     if(ac.click(driver, xpth, step)){System.out.println("clicked drop down box for selecting document type");}
     else{System.out.println("could not hit drop down box for selecting document type");
     return false;}
-    waiting.pleaseWait(3);
+    waiting.pleaseWait(1);
 
 /*    
     try{
@@ -107,14 +107,18 @@ public boolean createDocument1(){
     step="select option Design Document";
     String option="Design Documents";
     if(ac.selectItem1(driver, option)){System.out.println("document type  Design Documents was present");}
-    else{xpth="(.//li[@data-offset-index='0'])[2]";
-	ac.click(driver, xpth, step);
-	System.out.println("document type  Design Documents was not present");}
-    
-    
-    
-    
-    
+    else{
+    	System.out.println("document type  Design Documents was not present");
+    	
+    	step="hit drop down box for selecting document type again";
+    	waiting.pleaseWait(5);
+        xpth=".//*[@name='template0']/div/span/span/span[2]/span";
+        if(ac.click(driver, xpth, step)){System.out.println("clicked drop down box for selecting document type again");}
+    	
+    	
+    	xpth="(.//li[@data-offset-index='0'])[2]";
+    	ac.click(driver, xpth, step);}
+	//System.out.println("document type  Design Documents was not present");}
     
     
     
@@ -144,7 +148,7 @@ public boolean createDocument1(){
 	
 	
 	// Selecting the approval status as N
-	step="Selecting the approval status as N";
+	step="Selecting the approval status as N is ";
 	xpth=".//li[@class='k-item ng-scope k-state-selected k-state-focused' and .='N']";
 	if(ac.click(driver, xpth, step)){System.out.println(step+"PASSED");}
 	else{System.out.println("ERROR : "+step+"**************************************FAILED");
@@ -152,7 +156,7 @@ public boolean createDocument1(){
 	waiting.pleaseWait(3);
 	
 	//hit save button
-	step="hit save button";
+	step="hit save button is ";
 	xpth=".//*[@id='footer']/button[@data-ng-click='vm.saveChanges()']";
 	if(ac.enabled(driver, xpth, step)){
 		ac.click(driver, xpth, step);
@@ -167,12 +171,6 @@ public boolean createDocument1(){
 	
 }
 
-	
-	
-	
-	
-	
-	
-	
-
 }
+
+

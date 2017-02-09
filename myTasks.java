@@ -143,7 +143,7 @@ public boolean createNewOrganization1(){
     ac.click(driver, xpth, step);
     }
     else{
-    	xpth="(.//*[@data-ng-click='viewAll()'])[2]";
+    	xpth="(.//*[@data-ng-click='launchTileCtrl.viewAll()'])[2]";
     	ac.click(driver, xpth, step);
     	waiting.pleaseWait(7);
     	xpth=".//*[@class='menu-link ng-binding' and .='New organization']";
@@ -158,7 +158,7 @@ public boolean createNewOrganization1(){
     	waiting.pleaseWait(7);
     	xpth=".//*[@class='menu-link ng-binding' and .='New organization']";
     	ac.click(driver, xpth, step);
-    	waiting.pleaseWait(7);
+    	waiting.pleaseWait(5);
     	
     }
     
@@ -166,7 +166,8 @@ public boolean createNewOrganization1(){
 	waiting.pleaseWait(9);
 	//Click on type drop down arrow
 	step="Click on type drop down arrow";
-	xpth=".//span[@class='k-icon k-i-arrow-s' and .='select']";
+	//xpth=".//span[@class='k-icon k-i-arrow-s' and .='select']";
+	xpth="(.//*[@class='k-icon k-i-arrow-s'])[1]";
 	//ac.click(xpth, step);
 	if(ac.click(driver, xpth, step)){System.out.println(step+" : Done!");}
 	else{System.out.println(step+" : Failed!");
@@ -197,6 +198,9 @@ public boolean createNewOrganization1(){
 	if(ac.click(driver, xpth, step)){System.out.println(step+" : Done!");}
 	else{System.out.println(step+" : Failed!");
 	return false;}
+	
+	if(ac.errorCloseFunction(driver)){System.out.println(" close");}
+	else{System.out.println("close was not present");}
 	waiting.pleaseWait(5);
 	
 	//validate the name on another page after save
@@ -278,7 +282,8 @@ public boolean createNewContract1(){
 	
 	// drop down box of status                 (.//span[@class='k-icon k-i-arrow-s' and .='select'])[2]
 	step="drop down box of status";
-	xpth="(.//span[@class='k-icon k-i-arrow-s' and .='select'])[2]";
+	//xpth="(.//span[@class='k-icon k-i-arrow-s' and .='select'])[2]";
+	xpth="(.//*[@class='k-icon k-i-arrow-s'])[2]";
 	if(ac.click(driver, xpth, step)){System.out.println("Drop down box arrow is hit");}
 	else{System.out.println("Drop down box arrow could not be hit");
 	return false;}
@@ -369,7 +374,8 @@ public boolean createFromOrg1(){
 	
 	//click on filter for name---.//th[@data-title='Name']/a[1]/span
 		step="click on filter for name";
-		xpth=".//th[@data-title='Name']/a[1]/span";
+		//xpth=".//th[@data-title='Name']/a[1]/span";
+		xpth="(.//span[@class='k-icon k-i-filter' and . = 'Filter'])[2]";
 		if(ac.click(driver, xpth, step)){System.out.println(step+" : Done!");}
 		else{System.out.println(step+" : Failed!");
 		return false;}
@@ -569,8 +575,9 @@ public boolean createBudget1(){
 			//View All                    (.//button[@data-ng-click='viewAll()'])[2]
 	step = "View All Click";
 	Actions1 ac = new Actions1(driver);
-	xpth = "(.//button[@data-ng-click='viewAll()'])[2]";
-
+	//xpth = "(.//button[@data-ng-click='viewAll()'])[2]";
+	xpth = "(.//button[@data-ng-click='launchTileCtrl.viewAll()'])[2]";
+	
 	if(ac.click(driver, xpth, step)){System.out.println(step+" : Done!");}
 	else{System.out.println(step+" : Failed!");
 	return false;}

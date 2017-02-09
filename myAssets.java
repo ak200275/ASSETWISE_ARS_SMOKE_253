@@ -107,6 +107,7 @@ public boolean createAsset1(){
             //Create new Asset
 		Date date = new Date();
 		String datetime= new SimpleDateFormat("ddMMMyy_hhmm").format(date);
+		String startdatetime = new SimpleDateFormat("MM/dd/yyyy").format(date);
 		String asset_title= "Asset_"+datetime;
 		System.out.println(asset_title);
 		System.out.println("Creating new Asset");
@@ -119,15 +120,16 @@ public boolean createAsset1(){
          Actions1 ac=new Actions1(driver);
          step = "Click on the New Asset link";
          xpth=".//a[@class='ng-binding ng-scope' and .='New asset']";
-         if(ac.enabled(driver, xpth, step)){ac.click(driver, xpth, step);
+         if(ac.click(driver, xpth, step)){
          System.out.println(step+"  done");}
          else{System.out.println("ERROR: "+step+"********************************************************************  Failed");
          return false;}
          waiting.pleaseWait(15);
         
          step = "Drop Down";
-         xpth=".//div[@ng-model='templateIdTracker']/div/span/span/span[2]/span";
-         if(ac.enabled(driver, xpth, step)){ac.click(driver, xpth, step);
+         //xpth=".//div[@ng-model='templateIdTracker']/div/span/span/span[2]/span";
+         xpth=".//*[@class='k-icon k-i-arrow-s']";
+         if(ac.click(driver, xpth, step)){
          System.out.println(step+"  done");}
          else{System.out.println("ERROR: "+step+"********************************************************************  Failed");
          return false;}
@@ -141,6 +143,14 @@ public boolean createAsset1(){
           return false;}
           waiting.pleaseWait(15);
          
+          step = "Start Date";
+          xpth=".//input[@name='DateEffective']";
+          inp=startdatetime;
+          if(ac.enabled(driver, xpth, step)){ac.input(driver, xpth, inp, step);
+          System.out.println(step+"  done");}
+          else{System.out.println("ERROR: "+step+"********************************************************************  Failed");
+          return false;}
+          waiting.pleaseWait(3);
          
           step = "Provide name";
           xpth=".//.[@name='Description']";
@@ -152,7 +162,7 @@ public boolean createAsset1(){
           waiting.pleaseWait(3);
          
           step = "Drop Down Error";
-          xpth=".//div[@name='template5']/div/span/span/span[2]/span";
+          xpth="(.//*[@class='k-icon k-i-arrow-s'])[2]";
           if(ac.enabled(driver, xpth, step)){ac.click(driver, xpth, step);
           System.out.println(step+"  done");}
           else{System.out.println("ERROR: "+step+"********************************************************************  Failed");
